@@ -58,7 +58,7 @@ public class StoryController {
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}/description")
     public ResponseEntity updateDescription(@PathVariable String id, @RequestBody String description) {
         storyService.updateDescription(id, description);
         return new ResponseEntity(HttpStatus.NO_CONTENT);
