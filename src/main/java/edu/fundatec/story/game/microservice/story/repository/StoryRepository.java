@@ -11,5 +11,5 @@ import java.util.List;
 public interface StoryRepository extends MongoRepository<Story, String> {
 
     List<Story> findAllByCreatorId(String creatorId);
-    List<Story> findAllByNameContains(String name, Pageable pageable);
+    List<Story> findAllByTitleContains(String title, Pageable pageable);
 }

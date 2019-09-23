@@ -16,7 +16,7 @@ public class StoryTest {
 
     @Test
     public void shouldCreateStory() {
-        assertEquals("The Fairy Tale", story.getName());
+        assertEquals("The Fairy Tale", story.getTitle());
         assertEquals("123456789", story.getCreatorId());
         assertEquals("Any description", story.getDescription());
         assertEquals(0, story.getActs().size());

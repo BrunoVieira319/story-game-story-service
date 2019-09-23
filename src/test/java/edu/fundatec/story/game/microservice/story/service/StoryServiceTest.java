@@ -61,7 +61,7 @@ public class StoryServiceTest {
 
     private StoryDto createStoryDto() {
         StoryDto storyDto = new StoryDto();
-        storyDto.setName("My Story");
+        storyDto.setTitle("My Story");
         storyDto.setCreatorId("123456");
         storyDto.setDescription("A description");
         return storyDto;

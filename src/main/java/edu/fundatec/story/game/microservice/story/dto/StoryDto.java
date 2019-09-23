@@ -5,7 +5,8 @@ import lombok.Data;
 @Data
 public class StoryDto {
 
-    private String name;
+    private String title;
     private String creatorId;
+    private String cover;
     private String description;
 }

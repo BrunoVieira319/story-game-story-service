@@ -22,7 +22,7 @@ public class StoryService {
     }
 
     public void saveNewStory(StoryDto dto) {
-        Story story = new Story(dto.getName(), dto.getCreatorId(), dto.getDescription());
+        Story story = new Story(dto.getTitle(), dto.getCreatorId(), dto.getCover(), dto.getDescription());
         storyRepository.save(story);
     }
 
@@ -32,7 +32,7 @@ public class StoryService {
 
     public List<Story> findStoriesByName(String name, int page) {
         Pageable pageable = PageRequest.of(page, 10);
-        return storyRepository.findAllByNameContains(name, pageable);
+        return storyRepository.findAllByTitleContains(name, pageable);
     }
 
     public void addAct(String id, String act) {
@@ -52,7 +52,7 @@ public class StoryService {
     public void updateName(String id, String name) {
         Optional<Story> optionalStory = storyRepository.findById(id);
         Story story = optionalStory.orElseThrow(() -> new IllegalArgumentException("Story not found"));
-        story.setName(name);
+        story.setTitle(name);
         storyRepository.save(story);
     }
 

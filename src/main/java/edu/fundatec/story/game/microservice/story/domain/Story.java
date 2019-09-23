@@ -21,7 +21,7 @@ public class Story {
     @Setter
     @NotNull
     @NotEmpty
-    private String name;
+    private String title;
 
     @NotNull
     @NotEmpty
@@ -30,11 +30,15 @@ public class Story {
     @Setter
     private String description;
 
+    @Setter
+    private String cover;
+
     private List<String> acts;
 
-    public Story(String name, String creatorId, String description) {
-        this.name = name;
+    public Story(String title, String creatorId, String cover, String description) {
+        this.title = title;
         this.creatorId = creatorId;
+        this.cover = cover;
         this.description = description;
         this.acts = new ArrayList<>();
     }
