@@ -25,13 +25,6 @@ public class StoryServiceTest {
     @Autowired
     private StoryService storyService;
 
-//    @Autowired
-//    @Before
-//    public void setup(StoryService storyService, StoryRepository storyRepository) {
-//        this.storyService = storyService;
-//        this.storyRepository = storyRepository;
-//    }
-
     @After
     public void dropDatabase() {
         storyRepository.deleteAll();
@@ -69,7 +62,7 @@ public class StoryServiceTest {
 
     private void populateDatabase() {
         IntStream.range(0, 10).forEach(i -> {
-            storyRepository.save(new Story("My Story", "123456", "A description"));
+            storyRepository.save(new Story("My Story", "123456", "image", "A description"));
         });
     }
 

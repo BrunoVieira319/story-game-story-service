@@ -11,7 +11,7 @@ public class StoryTest {
 
     @Before
     public void setup () {
-        story = new Story("The Fairy Tale", "123456789", "Any description");
+        story = new Story("The Fairy Tale", "123456789", "image", "Any description");
     }
 
     @Test
