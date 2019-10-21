@@ -26,6 +26,11 @@ public class StoryService {
         storyRepository.save(story);
     }
 
+    public List<Story> findMostPopularStories(int page) {
+        Pageable pageable = PageRequest.of(page, 10);
+        return storyRepository.findAll(pageable).getContent();
+    }
+
     public List<Story> findStoriesByCreatorId(String creatorId) {
         return storyRepository.findAllByCreatorId(creatorId);
     }

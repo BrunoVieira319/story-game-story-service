@@ -28,6 +28,12 @@ public class StoryController {
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
+    @GetMapping("/popular")
+    public ResponseEntity getMostPopularStories(@RequestParam int page) {
+        List<Story> stories = storyService.findMostPopularStories(page);
+        return new ResponseEntity<>(stories, HttpStatus.OK);
+    }
+
     @GetMapping("/{creatorId}")
     public ResponseEntity<List<Story>> getStoriesByCreatorId(@PathVariable String creatorId) {
         List<Story> stories = storyService.findStoriesByCreatorId(creatorId);
