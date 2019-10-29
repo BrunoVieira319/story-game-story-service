@@ -19,6 +19,7 @@ resource "google_compute_instance" "story-instance" {
   network_interface {
     network = "default"
     access_config {
+      nat_ip = google_compute_address.story-static-ip-address.address
     }
   }
 }
@@ -33,4 +34,8 @@ resource "google_compute_firewall" "story-firewall" {
   }
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["http"]
+}
+
+resource "google_compute_address" "story-static-ip-address" {
+  name = "story-static-ip-address"
 }
